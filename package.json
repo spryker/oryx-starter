@@ -6,10 +6,10 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@spryker-oryx/presets": "0.3.0"
+    "@spryker-oryx/presets": "latest"
   },
   "devDependencies": {
-    "vite": "~3.0.9",
-    "vite-plugin-static-copy": "^0.12.0"
+    "vite": "^4.0.0",
+    "vite-plugin-static-copy": "^0.13.0"
   }
 }
