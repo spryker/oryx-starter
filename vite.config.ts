@@ -4,7 +4,7 @@ import { viteStaticCopy } from "vite-plugin-static-copy";
 export default defineConfig({
   root: './src',
   envDir: '../',
-  envPrefix: ['FES', 'SCOS', 'STORE'],
+  envPrefix: ['FES', 'SCOS', 'STORE', 'ORYX'],
   build: {
     outDir: '../dist/client',
     emptyOutDir: true,
