@@ -16,4 +16,5 @@ export default {
   'tax-excluded': 'لا تشمل الضرائب',
   password: 'كلمة المرور',
   'remember-me': 'تذكرني',
+  email: 'بريد إلكتروني'
 };
