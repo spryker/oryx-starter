@@ -9,6 +9,7 @@
     "@spryker-oryx/presets": "latest"
   },
   "devDependencies": {
+    "dotenv": "^16.0.3",
     "vite": "^4.0.0",
     "vite-plugin-static-copy": "^0.13.0"
   }
