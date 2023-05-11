@@ -6,6 +6,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@spryker-oryx/labs": "latest",
     "@spryker-oryx/presets": "latest"
   },
   "devDependencies": {
