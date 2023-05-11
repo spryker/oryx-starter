@@ -10,10 +10,6 @@
     "build:netlify": "vite build -c vite.config.netlify.ts"
   },
   "dependencies": {
-    "lit": "~2.6.0",
-    "lit-element": "~3.2.0",
-    "lit-html": "~2.6.0",
-    "@lit-labs/ssr": "~3.0.1",
     "@spryker-oryx/presets": "latest"
   },
   "devDependencies": {
