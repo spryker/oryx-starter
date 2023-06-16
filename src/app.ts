@@ -8,5 +8,6 @@ export const app = appBuilder()
   .withFeature(storefrontFeatures)
   .withTheme(storefrontTheme)
   //   .withTheme(examples.CustomTheme)
+  //   .withFeature(examples.labs)
   .withEnvironment(import.meta.env)
   .create();
