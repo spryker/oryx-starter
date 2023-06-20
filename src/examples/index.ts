@@ -1,3 +1,3 @@
-export * from "./theme";
-export * from "./labs";
-export * from "./components";
+export * from "./theme/index.js";
+export * from "./labs.js";
+export * from "./components/index.js";
