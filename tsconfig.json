@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "moduleResolution": "nodenext",
+    "module": "es2020",
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"],
+}
