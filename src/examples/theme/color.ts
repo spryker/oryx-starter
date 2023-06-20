@@ -1,4 +1,8 @@
-import { Theme, colorPalette } from "@spryker-oryx/experience";
+import {
+  Theme,
+  colorPalette,
+  ColorDesignTokens,
+} from "@spryker-oryx/experience";
 
 // primary, secondary, neutral, info, success, error, warning
 export const CustomTheme: Theme = {
