@@ -11,5 +11,6 @@ export const app = appBuilder()
   .withTheme(examples.CustomTheme)
   .withTheme(examples.CustomIcons)
   .withFeature(examples.labs)
+  .withOptions(examples.CustomSearchBoxOptions)
   .withEnvironment(import.meta.env)
   .create();
