@@ -7,7 +7,7 @@ export const HeaderTemplate: StaticComponent = {
   meta: { title: 'Header', route: '/_header' },
   components: [
     {
-      type: 'oryx-new-mock-button',
+      type: 'oryx-new-mock',
     },
     {
       type: 'oryx-spinner',

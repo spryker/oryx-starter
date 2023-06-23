@@ -30,6 +30,6 @@ export const replacedComponentLogic = spinnerComponent({
 });
 
 export const customComponent = componentDef({
-  name: 'oryx-new-mock-button',
+  name: 'oryx-new-mock',
   impl: () => import('./new-mock.component.js').then((m) => m.NewMockComponent),
 });
