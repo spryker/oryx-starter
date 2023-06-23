@@ -22,10 +22,10 @@ export const extendedComponentLogic = iconButtonComponent({
     ),
 });
 
-export const replaceComponentLogic = spinnerComponent({
+export const replacedComponentLogic = spinnerComponent({
   impl: () =>
-    import('./replace-spinner.component.js').then(
-      (m) => m.ReplaceSpinnerComponent,
+    import('./replaced-spinner.component.js').then(
+      (m) => m.ReplacedSpinnerComponent,
     ),
 });
 

@@ -1,6 +1,6 @@
 import { html, LitElement, TemplateResult } from 'lit';
 
-export class ReplaceSpinnerComponent extends LitElement {
+export class ReplacedSpinnerComponent extends LitElement {
   protected override render(): TemplateResult {
     return html`Spinner`;
   }

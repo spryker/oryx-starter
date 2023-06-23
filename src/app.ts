@@ -16,7 +16,7 @@ export const app = appBuilder()
   .withComponents([
     examples.extendedComponentStyle,
     examples.extendedComponentLogic,
-    examples.replaceComponentLogic,
+    examples.replacedComponentLogic,
     examples.customComponent,
   ])
   .withProviders([provideExperienceData([examples.HeaderTemplate])])
