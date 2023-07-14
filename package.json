@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@spryker-oryx/themes": "latest",
-    "@spryker-oryx/presets": "lasest"
+    "@spryker-oryx/presets": "latest"
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
