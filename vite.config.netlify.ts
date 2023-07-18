@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
+import { viteConfig } from './vite.config.common.js';
 
 export default defineConfig({
-  root: './src',
+  root: viteConfig.index,
   build: {
     minify: false,
     lib: {
@@ -15,15 +15,5 @@ export default defineConfig({
     rollupOptions: {
       external: ['fs', 'path', 'url', 'module', 'vm', /^node/, /^@netlify/],
     },
-  },
-  plugins: [
-    viteStaticCopy({
-      targets: [
-        {
-          src: '../server/hosting/netlify.toml',
-          dest: '../../client',
-        },
-      ],
-    }),
-  ],
+  }
 });

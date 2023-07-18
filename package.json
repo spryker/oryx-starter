@@ -3,18 +3,20 @@
   "type": "module",
   "scripts": {
     "dev": "vite -c vite.config.ts",
-    "dev:ssr": "ts-node --experimentalSpecifierResolution node --esm server/server",
-    "build": "npm run build:client",
+    "dev:ssr": "ts-node server/server",
+    "prod:ssr": "npm run build && npm run dev:ssr --omit=dev",
+    "build": "npm run build:client && npm run build:ssr && npm run build:netlify",
     "build:client": "vite build",
     "build:ssr": "vite build -c vite.config.server.ts",
     "build:netlify": "vite build -c vite.config.netlify.ts"
   },
   "dependencies": {
-    "@spryker-oryx/themes": "1.0.0-rc.0",
-    "@spryker-oryx/presets": "1.0.0-rc.0"
+    "@spryker-oryx/presets": "1.0.0-rc.0",
+    "@spryker-oryx/themes": "1.0.0-rc.0"
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
+    "ts-node": "^10.0.0",
     "vite": "^4.0.0",
     "vite-plugin-static-copy": "^0.13.0"
   }
