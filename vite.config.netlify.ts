@@ -4,7 +4,6 @@ import { viteConfig } from './vite.config.common.js';
 export default defineConfig({
   root: viteConfig.index,
   build: {
-    minify: false,
     lib: {
       entry: '../server/hosting/netlify.ts',
       formats: ['es'],
@@ -13,7 +12,7 @@ export default defineConfig({
     emptyOutDir: true,
     outDir: '../dist/functions/ssr',
     rollupOptions: {
-      external: ['fs', 'path', 'url', 'module', 'vm', /^node/, /^@netlify/],
+      external: ['buffer', 'fs', 'path', 'url', 'module', 'vm', /^node/, /^@netlify/],
     },
   }
 });
