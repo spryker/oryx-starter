@@ -11,7 +11,7 @@ import {contentFeature} from "@spryker-oryx/content";
 import {formFeature} from "@spryker-oryx/form";
 
 export const storefrontFeatures = [
-    RouterFeature
+    coreFeature
 ];
 
 export const app = appBuilder()
