@@ -15,5 +15,4 @@ export const storefrontFeatures = [
 ];
 
 export const app = appBuilder()
-    .withFeature(storefrontFeatures)
     .create();
