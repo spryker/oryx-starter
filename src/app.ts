@@ -11,17 +11,7 @@ import {contentFeature} from "@spryker-oryx/content";
 import {formFeature} from "@spryker-oryx/form";
 
 export const storefrontFeatures = [
-    uiFeature,
-    coreFeature,
-    new SapiAuthFeature(),
-    new SapiAuthComponentsFeature(),
-    new RouterFeature(),
-    new I18nFeature(),
-    cartFeature,
-    checkoutFeature,
-    orderFeature,
-    contentFeature,
-    formFeature,
+    coreFeature
 ];
 
 export const app = appBuilder()
