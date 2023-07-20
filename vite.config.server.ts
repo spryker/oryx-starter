@@ -15,9 +15,6 @@ export default defineConfig({
     emptyOutDir: true,
     outDir: '../dist/server',
     ssr: '../server/render.ts',
-    rollupOptions: {
-      external: ['buffer'],
-    },
   },
   ssr: {
     noExternal: true,

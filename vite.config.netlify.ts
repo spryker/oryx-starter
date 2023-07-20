@@ -7,12 +7,12 @@ export default defineConfig({
     lib: {
       entry: '../server/hosting/netlify.ts',
       formats: ['es'],
-      fileName: 'index',
+      fileName: 'index'
     },
     emptyOutDir: true,
     outDir: '../dist/functions/ssr',
     rollupOptions: {
-      external: ['fs', 'path', 'url', 'module', 'vm', /^node/, /^@netlify/],
+      external: ['fs', 'path', 'url', 'module', 'vm', /^node/, /^@netlify/]
     },
   }
 });
