@@ -1,15 +1,14 @@
-import { defineConfig, splitVendorChunkPlugin } from 'vite';
+import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
-import dotenv from 'dotenv';
-
-dotenv.config();
+import { viteConfig } from './vite.config.common.js';
+import 'dotenv/config'
 
 export default defineConfig({
-  root: './src',
-  envDir: '../',
-  envPrefix: ['SCOS', 'STORE', 'ORYX'],
+  root: viteConfig.index,
+  envDir: viteConfig.root,
+  envPrefix: viteConfig.envPrefix,
   build: {
-    outDir: '../dist/client',
+    outDir: viteConfig.build.outDirRoot,
     emptyOutDir: true,
   },
   define: {

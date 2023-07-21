@@ -1,17 +1,22 @@
 import { defineConfig } from 'vite';
+import { viteConfig } from './vite.config.common.js';
 
 export default defineConfig({
-  root: './src',
-  envDir: '../',
-  envPrefix: ['ORYX', 'SCOS', 'STORE'],
+  root: viteConfig.index,
+  envDir: viteConfig.root,
+  envPrefix: viteConfig.envPrefix,
   build: {
+    target: 'esnext',
     lib: {
       entry: '../server/render.ts',
       formats: ['iife'],
-      name: 'storefront',
+      name: viteConfig.ssr.namespace,
     },
     emptyOutDir: true,
     outDir: '../dist/server',
     ssr: '../server/render.ts',
+  },
+  ssr: {
+    noExternal: true,
   }
 });
