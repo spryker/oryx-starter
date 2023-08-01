@@ -7,7 +7,8 @@
   },
   "dependencies": {
     "@spryker-oryx/labs": "latest",
-    "@spryker-oryx/presets": "latest"
+    "@spryker-oryx/presets": "latest",
+    "@spryker-oryx/themes": "latest"
   },
   "devDependencies": {
     "vite": "^4.0.0",

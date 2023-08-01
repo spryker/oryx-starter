@@ -1,11 +1,10 @@
-import { appBuilder } from '@spryker-oryx/core';
-import { b2cFeatures } from '@spryker-oryx/presets';
-import { storefrontTheme } from '@spryker-oryx/themes';
-import { labsFeature } from '@spryker-oryx/labs';
+import { appBuilder } from "@spryker-oryx/application";
+import { labsFeatures } from "@spryker-oryx/labs";
+import { storefrontFeatures } from "@spryker-oryx/presets/storefront";
+import { storefrontTheme } from "@spryker-oryx/themes";
 
 export const app = appBuilder()
-  .withEnvironment(import.meta.env)
-  .withFeature(b2cFeatures)
-  .withFeature(labsFeature)
-  .withTheme(storefrontTheme)
-  .create();
+    .withFeature([...storefrontFeatures, ...labsFeatures])
+    .withTheme([storefrontTheme])
+    .withEnvironment(import.meta.env)
+    .create();
