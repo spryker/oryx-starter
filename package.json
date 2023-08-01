@@ -10,8 +10,8 @@
     "build:netlify": "vite build -c vite.config.netlify.ts"
   },
   "dependencies": {
-    "@spryker-oryx/themes": "rc",
-    "@spryker-oryx/presets": "rc"
+    "@spryker-oryx/themes": "latest",
+    "@spryker-oryx/presets": "latest"
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
