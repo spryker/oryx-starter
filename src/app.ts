@@ -1,8 +1,9 @@
 import { appBuilder } from '@spryker-oryx/application';
 import { storefrontFeatures } from '@spryker-oryx/presets/storefront';
 import { storefrontTheme } from '@spryker-oryx/themes';
-import {colorPalette} from '@spryker-oryx/experience'
+import {colorPalette, provideExperienceData } from '@spryker-oryx/experience'
 import { labsFeatures } from '@spryker-oryx/labs';
+
 
 export const app = appBuilder()
     .withFeature(storefrontFeatures)
@@ -15,5 +16,21 @@ export const app = appBuilder()
             }
         }]
     })
+    .withComponents([{
+        name: 'instant-chat-messages',
+        impl: () =>
+            import('./instant-chat-messages.js').then(
+                m => m.InstantChatMessages
+            )
+    }])
+    .withProviders([
+        provideExperienceData({
+            merge: {
+                selector: 'oryx-product-availability',
+                type: 'after',
+            },
+            type: 'instant-chat-messages'
+        })
+    ])
     .withEnvironment(import.meta.env)
     .create();
