@@ -71,6 +71,7 @@ export class ChatComponent extends LitElement implements InstantChatMessages {
   private _sendMessage(e) {
     fetch('https://glue.de.spryker.local/instant-chat', {
       method: 'POST',
+      mode: 'cors',
       headers: {
         "Content-Type": "application/vnd.api+json",
         // 'Content-Type': 'application/x-www-form-urlencoded',
