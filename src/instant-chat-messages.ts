@@ -1,6 +1,7 @@
 import { computed } from '@spryker-oryx/utilities'
 import { CSSResultGroup, html, css, LitElement } from 'lit'
 import { property } from 'lit/decorators.js';
+import { classMap } from 'lit/directives/class-map.js';
 
 export interface InstantChatMessages {
   aNumber: number
@@ -23,26 +24,51 @@ export class InstantChatMessages extends LitElement implements InstantChatMessag
     .chat-component {
       position: relative;
     }
+    .icon {
+      position: relative;
+    }
     .messages-count {
       position: absolute;
       right: 0;
       bottom: 0;
       line-height: 1
     }
+    .hidden {
+      display: none
+    }
   `
   @property({ type: Number })
   aNumber = 5
+
+  @property({ type: Boolean })
+  isChatOpen = false
 
   // public $chatInstance = computed(() => null)
   public $numberOfMessages = computed(() => this.aNumber)
 
   private _increment(e: Event) {
     this.aNumber ++
+    this._triggerOpen(e)
   }
 
-  private _openChat(e: Event) {
-    window.console.log('Open chat')
+  private _triggerOpen(e: Event) {
+    console.log('Open chat', e)
+    this.isChatOpen = !this.isChatOpen
+
   }
+
+  /**
+   *
+  {
+    "data": {
+      "type": "instant-chat",
+      "attributes": {
+        "message": "Who are you?"
+      }
+    }
+  }
+   *
+   */
 
   protected render() {
     const content = html`
@@ -50,8 +76,11 @@ export class InstantChatMessages extends LitElement implements InstantChatMessag
         <section class="chat-component">
           <section class="icon">
             <oryx-button @click=${this._increment} type="icon" icon="chat"></oryx-button>
+            <section class="messages-count">${this.aNumber}</section>
           </section>
-          <section class="messages-count">${this.aNumber}</section>
+          <section class="open-chat ${classMap({hidden: !this.isChatOpen})}">
+            Chat is open
+          </section>
         </section>
       </body>`
 
