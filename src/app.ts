@@ -17,6 +17,13 @@ export const app = appBuilder()
         }]
     })
     .withComponents([{
+        name: 'chat-component',
+        impl: () =>
+            import('./chat-component.js').then(
+                m => m.ChatComponent
+            )
+    }])
+    .withComponents([{
         name: 'instant-chat-messages',
         impl: () =>
             import('./instant-chat-messages.js').then(

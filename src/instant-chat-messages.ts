@@ -41,7 +41,7 @@ export class InstantChatMessages extends LitElement implements InstantChatMessag
   aNumber = 5
 
   @property({ type: Boolean })
-  isChatOpen = false
+  isChatOpen = true
 
   // public $chatInstance = computed(() => null)
   public $numberOfMessages = computed(() => this.aNumber)
@@ -57,33 +57,16 @@ export class InstantChatMessages extends LitElement implements InstantChatMessag
 
   }
 
-  /**
-   *
-  {
-    "data": {
-      "type": "instant-chat",
-      "attributes": {
-        "message": "Who are you?"
-      }
-    }
-  }
-
-  {
-    answer: "Yes"
-  }
-   *
-   */
-
   protected render() {
     const content = html`
       <body>
         <section class="chat-component">
+        <section class="open-chat ${classMap({hidden: !this.isChatOpen})}">
+          <chat-component></chat-component>
+        </section>
           <section class="icon">
             <oryx-button @click=${this._increment} type="icon" icon="chat"></oryx-button>
             <section class="messages-count">${this.aNumber}</section>
-          </section>
-          <section class="open-chat ${classMap({hidden: !this.isChatOpen})}">
-            Chat is open
           </section>
         </section>
       </body>`
