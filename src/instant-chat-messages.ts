@@ -67,6 +67,10 @@ export class InstantChatMessages extends LitElement implements InstantChatMessag
       }
     }
   }
+
+  {
+    answer: "Yes"
+  }
    *
    */
 
