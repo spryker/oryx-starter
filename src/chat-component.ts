@@ -25,6 +25,10 @@ export class ChatComponent extends LitElement implements InstantChatMessages {
       max-height: 100%;
       padding: 1rem
     }
+    .messages {
+      background-color: var(--oryx-color-primary-1);
+      padding: 0.5rem
+    }
     .input-field {
       position: absolute;
       bottom: 2.5%;
@@ -68,8 +72,13 @@ export class ChatComponent extends LitElement implements InstantChatMessages {
   @property({ type: String })
   valueToSend = ''
 
+  @property( {type: String })
+  answers = ['First message']
+
+  lastAnswer = 'The New One'
+
   private _sendMessage(e) {
-    fetch('https://glue.de.spryker.local/instant-chat', {
+    fetch('http://glue.de.spryker.local/instant-chat', {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -85,23 +94,31 @@ export class ChatComponent extends LitElement implements InstantChatMessages {
           }
         }
       })
-    })
+    }).then((response) => {
+      console.log(response)
+      this.answers.concat = response.answer
+    }).catch(error => console.log(error))
   }
 
   private _updateValue(e) {
     this.valueToSend = e.target.value
   }
 
+  private _mockResponse() {
+    const theNewOne = html`${this.answers}<div>${this.lastAnswer}</div>`
+    this.answers = theNewOne
+  }
+
   // Why not??
   // <oryx-input type="text" placeholder="Behind the musgo"></oryx-input>
   protected render() {
     const content = html`
-      <section>Message</section>
+      <section class="messages">${this.answers}</section>
       <section class="input-field">
         <form>
           <input type="text" @input=${this._updateValue} placeholder="Gimme what you got" />
         </form>
-        <button class="submit-button" @click=${this._sendMessage}>Send</button>
+        <button class="submit-button" @click=${this._mockResponse}>Send</button>
       </section>
     `
 
