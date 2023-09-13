@@ -5,6 +5,10 @@ export class InstantChatMessages extends LitElement {
   public $chatInstance = computed(() => null)
 
   protected override render() {
-    return html`heyyy`
+
+    const htmlToRender = `heyyy you`
+    return html`
+      ${htmlToRender}
+    `
   }
 }
