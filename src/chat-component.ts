@@ -22,8 +22,9 @@ export class ChatComponent extends LitElement {
       padding: 1rem
     }
     .messages {
-      background-color: var(--oryx-color-primary-1);
-      padding: 0.5rem
+      background-color: var(--oryx-color-primary-2);
+      padding: 0.5rem;
+      height: 88%
     }
     .input-field {
       position: absolute;
@@ -69,7 +70,7 @@ export class ChatComponent extends LitElement {
   valueToSend = ''
 
   @property( {type: String })
-  answers = ['What is Spryker?']
+  answers = ['']
 
   lastAnswer = ''
 
@@ -77,7 +78,7 @@ export class ChatComponent extends LitElement {
     e.preventDefault()
     fetch('http://glue.de.spryker.local/instant-chat', {
       method: 'POST',
-      mode: 'cors',
+      // mode: 'cors',
       headers: {
         "Content-Type": "application/vnd.api+json",
         // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -93,13 +94,14 @@ export class ChatComponent extends LitElement {
       })
     }).then((response) => {
       console.log(response)
-      const theNewOne = html`${this.answers}<div> - ${response.data.attributes.answer}</div>`
+      const theNewOne = html`${this.answers}<div> - ${response.body.data.attributes.answer}</div>`
       this.answers = theNewOne
     }).catch(error => console.log(error))
   }
 
   private _updateValue(e) {
     this.valueToSend = e.target.value
+    this.answers = this.valueToSend
   }
 
   private _mockResponse(e: Event) {
