@@ -76,8 +76,11 @@ export class ChatComponent extends LitElement implements InstantChatMessages {
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify({
-        "attributes": {
-          "message": this.valueToSend
+        "data": {
+          "type": "instant-chat",
+          "attributes": {
+            "message": this.valueToSend
+          }
         }
       })
     })
