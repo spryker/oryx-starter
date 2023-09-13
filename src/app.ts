@@ -26,7 +26,7 @@ export const app = appBuilder()
     .withProviders([
         provideExperienceData({
             merge: {
-                selector: 'oryx-product-availability',
+                selector: 'legal-links',
                 type: 'after',
             },
             type: 'instant-chat-messages'
