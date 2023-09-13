@@ -10,16 +10,14 @@ export interface InstantChatMessages {
 export class InstantChatMessages extends LitElement implements InstantChatMessages {
 
   static styles?: CSSResultGroup = css`
-    body {
-      background-color: blue
-    }
     :host {
       border: 2px dotted var(--oryx-color-primary-9);
       position: fixed!important;
       bottom: 5%;
       right: 0;
       background-color: var(--oryx-color-primary-8);
-      padding: 1rem
+      padding: 1rem;
+      z-index: 10
     }
     .chat-component {
       position: relative;
@@ -59,17 +57,16 @@ export class InstantChatMessages extends LitElement implements InstantChatMessag
 
   protected render() {
     const content = html`
-      <body>
-        <section class="chat-component">
+      <section class="chat-component">
         <section class="open-chat ${classMap({hidden: !this.isChatOpen})}">
           <chat-component></chat-component>
         </section>
-          <section class="icon">
-            <oryx-button @click=${this._increment} type="icon" icon="chat"></oryx-button>
-            <section class="messages-count">${this.aNumber}</section>
-          </section>
+        <section class="icon">
+          <oryx-button @click=${this._increment} type="icon" icon="chat"></oryx-button>
+          <section class="messages-count">${this.aNumber}</section>
         </section>
-      </body>`
+      </section>
+    `
 
     return html`
       ${content}
