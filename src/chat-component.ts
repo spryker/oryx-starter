@@ -3,11 +3,7 @@ import { CSSResultGroup, html, css, LitElement } from 'lit'
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 
-export interface ChatComponent {
-  aNumber: number
-}
-
-export class ChatComponent extends LitElement implements InstantChatMessages {
+export class ChatComponent extends LitElement {
 
   static styles?: CSSResultGroup = css`
     :host {
@@ -47,8 +43,8 @@ export class ChatComponent extends LitElement implements InstantChatMessages {
     .submit-button {
       padding: 7px 11px;
       width: 15%;
-    }
-
+      border-color: var(--oryx-color-primary-6);
+      background: var(--oryx-color-primary-2);
     }
   `
 
@@ -73,18 +69,19 @@ export class ChatComponent extends LitElement implements InstantChatMessages {
   valueToSend = ''
 
   @property( {type: String })
-  answers = ['First message']
+  answers = ['What is Spryker?']
 
-  lastAnswer = 'The New One'
+  lastAnswer = ''
 
   private _sendMessage(e) {
+    e.preventDefault()
     fetch('http://glue.de.spryker.local/instant-chat', {
       method: 'POST',
       mode: 'cors',
       headers: {
         "Content-Type": "application/vnd.api+json",
         // 'Content-Type': 'application/x-www-form-urlencoded',
-        "Accept": "application/json"
+        "Accept": "application/json",
       },
       body: JSON.stringify({
         "data": {
@@ -96,7 +93,8 @@ export class ChatComponent extends LitElement implements InstantChatMessages {
       })
     }).then((response) => {
       console.log(response)
-      this.answers.concat = response.answer
+      const theNewOne = html`${this.answers}<div> - ${response.data.attributes.answer}</div>`
+      this.answers = theNewOne
     }).catch(error => console.log(error))
   }
 
@@ -104,8 +102,9 @@ export class ChatComponent extends LitElement implements InstantChatMessages {
     this.valueToSend = e.target.value
   }
 
-  private _mockResponse() {
-    const theNewOne = html`${this.answers}<div>${this.lastAnswer}</div>`
+  private _mockResponse(e: Event) {
+    e.preventDefault()
+    const theNewOne = html`${this.answers}<div> - ${this.lastAnswer}</div>`
     this.answers = theNewOne
   }
 
@@ -115,10 +114,10 @@ export class ChatComponent extends LitElement implements InstantChatMessages {
     const content = html`
       <section class="messages">${this.answers}</section>
       <section class="input-field">
-        <form>
+        <form @submit=${this._sendMessage}>
           <input type="text" @input=${this._updateValue} placeholder="Gimme what you got" />
         </form>
-        <button class="submit-button" @click=${this._mockResponse}>Send</button>
+        <button class="submit-button" @click=${this._sendMessage}>Send</button>
       </section>
     `
 
