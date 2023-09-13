@@ -27,7 +27,24 @@ export class ChatComponent extends LitElement implements InstantChatMessages {
     }
     .input-field {
       position: absolute;
-      bottom: 2.5%
+      bottom: 2.5%;
+      width: 100%;
+
+    }
+    input {
+      padding: 7px 11px;
+      width: 95%
+    }
+    form {
+      width: 75%;
+      display: inline-block;
+      margin-right: 5px;
+    }
+    .submit-button {
+      padding: 7px 11px;
+      width: 15%;
+    }
+
     }
   `
 
@@ -48,13 +65,34 @@ export class ChatComponent extends LitElement implements InstantChatMessages {
    *
    */
 
+  @property({ type: String })
+  valueToSend = ''
+
+  private _sendMessage(e) {
+    fetch('http://glue.de.spryker.local/instant-chat', {
+      method: 'POST',
+      body: {
+        "attributes": {
+          "message": this.valueToSend
+        }
+      }
+    })
+  }
+
+  private _updateValue(e) {
+    this.valueToSend = e.target.value
+  }
+
   // Why not??
   // <oryx-input type="text" placeholder="Behind the musgo"></oryx-input>
   protected render() {
     const content = html`
       <section>Message</section>
       <section class="input-field">
-        <input type="text" placeholder="Gimme what you got" />
+        <form>
+          <input type="text" @input=${this._updateValue} placeholder="Gimme what you got" />
+        </form>
+        <button class="submit-button" @click=${this._sendMessage}>Send</button>
       </section>
     `
 
