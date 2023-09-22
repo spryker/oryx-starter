@@ -13,7 +13,8 @@ export default defineConfig({
     emptyOutDir: true,
   },
   define: {
-    'import.meta.env.SCOS_BASE_URL':`"${process.env.SCOS_BASE_URL ?? process.env.ORYX_FALLBACK_SCOS_BASE_URL}"`
+    'import.meta.env.SCOS_BASE_URL':`"${process.env.SCOS_BASE_URL ?? process.env.ORYX_FALLBACK_SCOS_BASE_URL}"`,
+    __ORYX_FEATURE_VERSION__: `"${process.env.ORYX_FEATURE_VERSION ?? ''}"`
   },
   server: {
     port: 3000,
