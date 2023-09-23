@@ -1,19 +1,22 @@
-import { defineConfig, splitVendorChunkPlugin } from 'vite';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
+import { defineConfig } from "vite";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 dotenv.config();
 
 export default defineConfig({
-  root: './src',
-  envDir: '../',
-  envPrefix: ['SCOS', 'STORE', 'ORYX'],
+  root: "./src",
+  envDir: "../",
+  envPrefix: ["SCOS", "ORYX"],
   build: {
-    outDir: '../dist/client',
+    outDir: "../dist/client",
     emptyOutDir: true,
   },
   define: {
-    'import.meta.env.SCOS_BASE_URL':`"${process.env.SCOS_BASE_URL ?? process.env.ORYX_FALLBACK_SCOS_BASE_URL}"`
+    "import.meta.env.SCOS_BASE_URL": `"${
+      process.env.SCOS_BASE_URL ?? process.env.ORYX_FALLBACK_SCOS_BASE_URL
+    }"`,
+    __ORYX_FEATURE_VERSION__: `"${process.env.ORYX_FEATURE_VERSION ?? ""}"`,
   },
   server: {
     port: 3000,
@@ -22,10 +25,10 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: '../src/assets/addresses',
-          dest: '../../dist/client/assets',
+          src: "../src/assets/addresses",
+          dest: "../../dist/client/assets",
         },
       ],
     }),
   ],
-})
+});
