@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
 
 const production = !process.argv.includes('--watch');
 
@@ -17,6 +16,7 @@ export default defineConfig(() => {
       },
     },
     define: {
+      __ORYX_FEATURE_VERSION__: `"${process.env.ORYX_FEATURE_VERSION ?? ''}"`,
       'process.env.NODE_ENV': JSON.stringify(
         production ? '"production"' : '"development"'
       ),

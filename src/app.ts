@@ -1,9 +1,19 @@
 import { appBuilder } from '@spryker-oryx/application';
-import { storefrontFeatures } from '@spryker-oryx/presets/storefront';
-import { storefrontTheme } from '@spryker-oryx/themes';
+import { offlineFulfillmentFeatures } from '@spryker-oryx/presets/fulfillment';
+import { fulfillmentTheme } from '@spryker-oryx/themes';
 
-export const app = appBuilder()
-    .withFeature(storefrontFeatures)
-    .withTheme(storefrontTheme)
-    .withEnvironment(import.meta.env)
-    .create();
+const env = import.meta.env;
+
+appBuilder()
+    .withEnvironment(env)
+    .withFeature(
+        offlineFulfillmentFeatures({
+            picking: {
+                appVersion: env.ORYX_FULFILLMENT_APP_VERSION,
+            },
+        })
+    )
+    .withTheme(fulfillmentTheme)
+    .create()
+    .then(() => console.debug('Fulfillment App started!'))
+    .catch(console.error);
