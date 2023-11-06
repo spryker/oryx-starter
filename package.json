@@ -15,12 +15,11 @@
     "@spryker-oryx/presets": "latest",
     "@spryker-oryx/themes": "latest",
     "dexie": "^3.2.2",
-    "vite-plugin-pwa": "~0.16.6"
+    "vite-plugin-pwa": "^0.16.0"
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
     "vite": "^4.0.0",
-    "vite-plugin-static-copy": "^0.13.0",
-    "vite-tsconfig-paths": "^3.5.0"
+    "vite-plugin-static-copy": "^0.13.0"
   }
 }
