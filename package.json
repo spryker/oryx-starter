@@ -14,7 +14,6 @@
   "dependencies": {
     "@spryker-oryx/presets": "latest",
     "@spryker-oryx/themes": "latest",
-    "dexie": "^3.2.2",
     "vite-plugin-pwa": "^0.16.0"
   },
   "devDependencies": {

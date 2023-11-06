@@ -8,13 +8,25 @@ const skipSw = !!process.env.NO_SW;
 
 export default defineConfig({
   root: '.',
-  envPrefix: 'ORYX_',
+  envPrefix: ['SCOS', 'ORYX'],
   build: {
     outDir: 'dist/fulfillment',
     emptyOutDir: true,
     sourcemap: true,
   },
   define: {
+    'import.meta.env.SCOS_BASE_URL': `"${
+        process.env.SCOS_BASE_URL ?? process.env.ORYX_FALLBACK_SCOS_BASE_URL
+    }"`,
+    'import.meta.env.ORYX_FULFILLMENT_PUBLIC_VAPID_KEY': `"${
+        process.env.SCOS_BASE_URL ?? process.env.ORYX_FALLBACK_FULFILLMENT_PUBLIC_VAPID_KEY
+    }"`,
+    'import.meta.env.ORYX_FEATURE_VERSION': `"${
+        process.env.SCOS_BASE_URL ?? process.env.ORYX_FALLBACK_FEATURE_VERSION
+    }"`,
+    'import.meta.env.ORYX_FULFILLMENT_CLIENT_ID': `"${
+        process.env.SCOS_BASE_URL ?? process.env.ORYX_FALLBACK_FULFILLMENT_CLIENT_ID
+    }"`,
     __ORYX_FEATURE_VERSION__: `"${process.env.ORYX_FEATURE_VERSION ?? ''}"`,
   },
   server: {
