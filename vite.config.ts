@@ -21,9 +21,6 @@ export default defineConfig({
     'import.meta.env.ORYX_FULFILLMENT_PUBLIC_VAPID_KEY': `"${
         process.env.ORYX_FULFILLMENT_PUBLIC_VAPID_KEY ?? process.env.ORYX_FALLBACK_FULFILLMENT_PUBLIC_VAPID_KEY
     }"`,
-    'import.meta.env.ORYX_FEATURE_VERSION': `"${
-        process.env.ORYX_FEATURE_VERSION ?? process.env.ORYX_FALLBACK_FEATURE_VERSION
-    }"`,
     'import.meta.env.ORYX_FULFILLMENT_CLIENT_ID': `"${
         process.env.ORYX_FULFILLMENT_CLIENT_ID ?? process.env.ORYX_FALLBACK_FULFILLMENT_CLIENT_ID
     }"`,
