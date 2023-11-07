@@ -2,8 +2,9 @@
   "name": "fes-storefront",
   "type": "module",
   "scripts": {
-    "dev": "npm run build:sw && vite -c vite.config.ts",
-    "dev:sw": "vite -c vite.config.sw.ts",
+    "dev": "npm run dev:sw & npm run dev:client",
+    "dev:client": "vite -c vite.config.ts",
+    "dev:sw": "vite build --config vite.config.sw.ts --watch",
     "build": "npm run build:sw && npm run build:client",
     "build:sw": "rm -rf dev-dist/sw && vite build -c vite.config.sw.ts",
     "build:client": "vite build",
