@@ -30,6 +30,10 @@ export default defineConfig({
     port: 4200,
     host: 'localhost',
   },
+  preview: {
+    port: 4200,
+    host: 'localhost',
+  },
   plugins: [
     VitePWA({
       devOptions: { enabled: !skipSw, type: 'module' },
