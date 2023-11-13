@@ -4,15 +4,6 @@ This is a minimal example of composable frontend application based on [Oryx fram
 
 See [the documentation](https://docs.spryker.com/docs/scos/dev/front-end-development/202307.0/oryx/getting-started/set-up-oryx.html) for installing Oryx or follow the steps below.
 
-## Tech Stack
-Oryx is built on the following main stack:
-- <img width='25' height='25' src='https://img.stackshare.io/service/1209/javascript.jpeg' alt='JavaScript'/> [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
-- <img width='25' height='25' src='https://img.stackshare.io/service/1612/bynNY5dJ.jpg' alt='TypeScript'/> [TypeScript](http://www.typescriptlang.org) – Languages
-- <img width='25' height='25' src='https://img.stackshare.io/service/2748/default_5dfbb146cf22182bca88c7d07f2515a5888fc12a.jpg' alt='Netlify'/> [Netlify](https://www.netlify.com/) – Static Web Hosting
-- <img width='25' height='25' src='https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png' alt='Shell'/> [Shell](https://en.wikipedia.org/wiki/Shell_script) – Shells
-
-Full tech stack [here](/techstack.md)
-
 ## Installation
 
 Download the boilerplate project and install dependencies:
