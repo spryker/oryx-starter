@@ -1,7 +1,7 @@
 <!--
 --- Readme.md Snippet without images Start ---
 ## Tech Stack
-spryker-community/composable-frontend-icm is built on the following main stack:
+spryker/composable-frontend is built on the following main stack:
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
 - [TypeScript](http://www.typescriptlang.org) – Languages
 - [Netlify](https://www.netlify.com/) – Static Web Hosting
@@ -12,7 +12,7 @@ Full tech stack [here](/techstack.md)
 
 --- Readme.md Snippet with images Start ---
 ## Tech Stack
-spryker-community/composable-frontend-icm is built on the following main stack:
+spryker/composable-frontend is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/1209/javascript.jpeg' alt='JavaScript'/> [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/1612/bynNY5dJ.jpg' alt='TypeScript'/> [TypeScript](http://www.typescriptlang.org) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/2748/default_5dfbb146cf22182bca88c7d07f2515a5888fc12a.jpg' alt='Netlify'/> [Netlify](https://www.netlify.com/) – Static Web Hosting
@@ -24,7 +24,7 @@ Full tech stack [here](/techstack.md)
 <div align="center">
 
 # Tech Stack File
-![](https://img.stackshare.io/repo.svg "repo") [spryker-community/composable-frontend-icm](https://github.com/spryker-community/composable-frontend-icm)![](https://img.stackshare.io/public_badge.svg "public")
+![](https://img.stackshare.io/repo.svg "repo") [spryker/composable-frontend](https://github.com/spryker/composable-frontend)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
 |7<br/>Tools used|11/09/23 <br/>Report generated|
 |------|------|
