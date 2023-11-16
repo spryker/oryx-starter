@@ -27,11 +27,11 @@ export default defineConfig({
     __ORYX_FEATURE_VERSION__: `"${process.env.ORYX_FEATURE_VERSION ?? ''}"`,
   },
   server: {
-    port: 4200,
+    port: 3000,
     host: 'localhost',
   },
   preview: {
-    port: 4200,
+    port: 3000,
     host: 'localhost',
   },
   plugins: [
