@@ -7,8 +7,7 @@
     "dev:sw": "vite build --config vite.config.sw.ts --watch",
     "build": "npm run build:sw && npm run build:client",
     "build:sw": "rm -rf dev-dist/sw && vite build -c vite.config.sw.ts",
-    "build:client": "vite build",
-    "build:netlify": "vite build -c vite.config.netlify.ts"
+    "build:client": "vite build"
   },
   "dependencies": {
     "@spryker-oryx/presets": "latest",
