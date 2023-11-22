@@ -24,7 +24,7 @@ To run application:
 
 `npm run dev`
 
-The application gets available at [localhost:3000](http://localhost:3000).
+The application gets available at [localhost:4200](http://localhost:4200).
 
 > **NOTE** there's no SSR integration on this boilerplate yet, but will come soon.
 
