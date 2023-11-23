@@ -10,7 +10,7 @@ export default defineConfig({
   root: './src',
   envPrefix: 'ORYX',
   build: {
-    outDir: '../dist/fulfillment',
+    outDir: '../dist/client',
     emptyOutDir: true,
     sourcemap: true,
   },
