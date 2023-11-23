@@ -7,10 +7,10 @@ dotenv.config();
 const skipSw = !!process.env.NO_SW;
 
 export default defineConfig({
-  root: '.',
+  root: './src',
   envPrefix: 'ORYX',
   build: {
-    outDir: 'dist/client',
+    outDir: '../dist/fulfillment',
     emptyOutDir: true,
     sourcemap: true,
   },
@@ -27,11 +27,11 @@ export default defineConfig({
     __ORYX_FEATURE_VERSION__: `"${process.env.ORYX_FEATURE_VERSION ?? ''}"`,
   },
   server: {
-    port: 3000,
+    port: 4200,
     host: 'localhost',
   },
   preview: {
-    port: 3000,
+    port: 4200,
     host: 'localhost',
   },
   plugins: [
@@ -40,7 +40,7 @@ export default defineConfig({
       registerType: 'prompt',
       injectRegister: 'auto',
       strategies: 'injectManifest',
-      srcDir: 'dev-dist/sw',
+      srcDir: '../dev-dist/sw',
       filename: 'app.js',
       manifest: {
         name: 'Fulfillment App',
